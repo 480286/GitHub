@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Mybatis解决链表查询_onetoone"
+  id="myeclipse.1552807809277"
+  context-root="/Mybatis解决链表查询_onetoone"
+  j2ee-spec="5.0"
+  archive="Mybatis解决链表查询_onetoone.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

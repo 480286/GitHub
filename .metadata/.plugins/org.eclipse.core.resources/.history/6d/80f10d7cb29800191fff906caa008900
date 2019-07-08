@@ -1,0 +1,6 @@
+package com.mypack.dao;
+
+public interface CartDao {
+
+	public boolean insertGoods();
+}

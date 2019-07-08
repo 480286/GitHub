@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/data/jpa 
+        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+    
+    <!-- 扫描组件 -->
+	<context:component-scan base-package="com.mypack"/>
+	
+	<!-- 引入properties文件 -->
+	<context:property-placeholder location="db.properties"/>
+	
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${db.driverClassName}"></property>
+		<property name="jdbcUrl" value="${db.url}"></property>
+		<property name="user" value="${db.username}"></property>
+		<property name="password" value="${db.passowrd}"></property>
+	</bean>
+
+	<!-- 配置jpa的entityManagerSecurity -->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<!-- 指定实体类包路径 -->
+		<property name="packagesToScan" value="com.mypack.entity"/>
+		<!-- 配置jpa持久化广商类适配器 -->
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+		</property>
+		<!-- 配置jpa属性 -->
+		<property name="jpaProperties">
+			<props>
+				<!-- 一级缓存 -->
+				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<!-- 二级缓存 -->
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>
+	</bean>
+	
+	<!-- 配置事物的支持注解 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	<!-- 配置springdate -->
+	<jpa:repositories base-package="com.mypack.dao" entity-manager-factory-ref="entityManagerFactory">
+	
+	</jpa:repositories>
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mypack.dao.SecondaryDao">
+
+	<select id="queryAllMenuByA_Id" resultType="SecondaryMenu" parameterType="int">
+		select * from secondary_menu where a_Id=#{a_Id}
+	</select>
+	
+	<!-- 根据二级菜单id查询 -->
+	<select id="queryOneMenuById" parameterType="int" resultType="SecondaryMenu">
+		select * from secondary_menu where id=#{id}
+	</select>
+	
+	<update id="updateMenu" parameterType="SecondaryMenu">
+		update secondary_menu set valuename1=#{valuename1},valuename2=#{valuename2},valuename3=#{valuename3},valuename4=#{valuename4},valuename5=#{valuename5},valuename6=#{valuename6},valuename7=#{valuename7},valuename8=#{valuename8},a_Id=#{a_Id} where id=#{id}
+	</update>
+	
+	<insert id="addMenu" parameterType="SecondaryMenu">
+		insert into secondary_menu values(valuename1=#{valuename1},valuename2=#{valuename2},valuename3=#{valuename3},valuename4=#{valuename4},valuename5=#{valuename5},valuename6=#{valuename6},valuename7=#{valuename7},valuename8=#{valuename8},a_Id=#{a_Id}) 
+	</insert>
+	
+	<delete id="deleteMenu" parameterType="int">
+		delete from secondary_menu where id=#{id}
+	</delete>
+</mapper>  

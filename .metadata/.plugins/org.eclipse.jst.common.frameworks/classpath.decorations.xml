@@ -1,0 +1,7 @@
+<classpath>
+  <container id="Pagination_ssm0100!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/Javawork/work/Pagination_ssm0100/WebContent/WEB-INF/lib/pagehelper-5.1.2.jar">
+      <source-attachment-path>D:/火线时刻/pagehelper-5.1.2-sources.jar</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

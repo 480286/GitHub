@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.mypack.dao.YingXiongDao">
+ 
+ 	<select id="queryAllYX" resultType="YingXiong">
+ 		select * from yingxiong
+ 	</select>
+ 	
+ 	<select id="queryOneYX" parameterType="int" resultType="YingXiong">
+ 		select * from yingxiong where id=#{id}
+ 	</select >
+ 		
+ 	<insert id="insertOneYX" parameterType="YingXiong">
+ 	insert into yingxiong values (#{id},#{name},#{xingbie},#{tel},#{gongsi},#{bumen},#{zhiwu},#{shengri},#{qq},#{weixin},#{youxiang},#{weibo})
+ 	
+ 	</insert>
+ 	
+ 	<update id="updateOneYX" parameterType="YingXiong">
+ 		update yingxiong set name=#{name},xingbie=#{xingbie},tel=#{tel},gongsi=#{gongsi},bumen=#{bumen},zhiwu=#{zhiwu},shengri=#{shengri},qq=#{qq},weixin=#{weixin},youxiang=#{youxiang},weibo=#{weibo} where id=#{id}
+ 	</update>
+ 	
+ 	<delete id="deleteOneYX" parameterType="int">
+ 		delete from yingxiong where id=#{id}
+ 	</delete>
+ 
+ 	<select id="queryYingXiong" parameterType="YingXiong" resultType="YingXiong">
+ 		select * from yingxiong 
+ 		
+ 		<where>
+ 		
+ 			<if test="xingbie!=null and xingbie!=''">
+ 			
+ 				xingbie=#{xingbie}
+ 			</if>
+ 			<if test="gongsi!=null and gongsi!=''">
+ 			
+ 				and gongsi=#{gongsi}
+ 			</if>
+ 			
+ 			<if test="bumen!=null and bumen!=''">
+ 			
+ 				and bumen=#{bumen}
+ 			</if>
+ 			
+ 		</where>
+ 		
+ 	
+ 	</select>
+ 
+ 
+ </mapper>

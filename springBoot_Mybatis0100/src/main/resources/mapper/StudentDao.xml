@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mypack.dao.StudentDao">
+
+	<select id="queryOneStu" parameterType="int" resultType="Student">
+		select * from stu1 where id=#{id}
+	</select>
+	
+	<select id="queryAllStu" resultType="Student">
+		select * from stu1
+	</select>
+	
+	<insert id="addStu" parameterType="Student">
+		insert into stu1 values(#{name},#{age},#{address}")
+	</insert>
+	
+	<delete id="deleteStu" parameterType="int">
+		delete from stu1 where id=#{id}
+	</delete>
+	
+	<update id="updateStu" parameterType="Student">
+		update stu1 set name=#{name},age=#{age},address=#{address} where id=#{id}
+	</update>
+</mapper>

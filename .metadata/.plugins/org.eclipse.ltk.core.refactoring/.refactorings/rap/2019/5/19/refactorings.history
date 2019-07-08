@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;index.jsp&apos; to &apos;rap&apos;" description="Move &apos;index.jsp&apos; to &apos;rap&apos;" destination="/rap" element1="/实现分页_ssm/WebRoot/index.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1557191308089" updateReferences="true"/>
+</session>

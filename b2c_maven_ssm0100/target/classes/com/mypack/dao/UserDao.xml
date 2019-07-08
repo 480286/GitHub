@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mypack.dao.UserDao">
+	<select id="queryUserByName" resultType="User" parameterType="String">
+		select username,password from user where username=#{username}
+	</select>
+	
+	<insert id="insertUser" parameterType="User">
+		insert into user(username,password,phone,email) values(#{username},#{password},#{phone},#{email})
+	</insert>
+	
+	<select id="queryUserByPhone" resultType="String" parameterType="String">
+		select username from user where phone=#{phone}
+	</select>
+	
+	<select id="queryUserIdByEmail" resultType="int" parameterType="String">
+		select uId from user where email=#{email}
+	</select>
+	
+	<update id="updateUserPasswordById" parameterType="User">
+		update user set password=#{password} where uId=#{uId}
+	</update>
+	
+</mapper>

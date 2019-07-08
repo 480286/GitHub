@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- action的name名称为该项目下的路径名称 -->
+		<action name="hello" class="">
+			<result name="success">index.jsp</result>
+		</action>
+	</package>
+</struts>

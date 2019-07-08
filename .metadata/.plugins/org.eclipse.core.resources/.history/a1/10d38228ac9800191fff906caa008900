@@ -1,0 +1,31 @@
+package com.mypack.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.mypack.entity.Cart;
+import com.mypack.entity.Goods;
+
+@Transactional
+@Controller
+@RequestMapping("/cart")
+public class CartController {
+	
+	List<Goods> goodsLst;
+
+	@RequestMapping("/count")
+	public String count(Goods goods, HttpSession session) {
+		goodsLst.add(goods);
+		session.setAttribute("goodsLst", goodsLst);
+		return "redirect:/cart/list";
+	}
+	
+	@RequestMapping("/list")
+	public String list()
+}

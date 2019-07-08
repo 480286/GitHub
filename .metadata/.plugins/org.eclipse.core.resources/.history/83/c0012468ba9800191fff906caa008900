@@ -1,0 +1,8 @@
+package com.mypack.dao;
+
+import com.mypack.entity.Cart;
+
+public interface CartDao {
+
+	public boolean insertGoods(Cart cart);
+}

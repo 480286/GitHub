@@ -1,0 +1,71 @@
+package com.mypack.Backstage;
+
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+
+import com.mypack.entity.CaiDan_Yi;
+import com.mypack.entity.SecondaryMenu;
+import com.mypack.service.CaiDan_YiIF;
+import com.mypack.service.SecondaryServiceIF;
+
+@ComponentScan("com.mypack.service")
+public class Managers {
+
+	@Autowired
+	SecondaryServiceIF secondaryService;
+	
+	@Autowired
+	CaiDan_YiIF caidan_yi;
+	
+	public static void main(String args[]) {
+	
+		Scanner input = new Scanner(System.in);
+		Managers m = new Managers();
+		int id=input.nextInt();
+		m.queryOneMenu(id);
+	}
+	
+	//一级查询单个
+	public CaiDan_Yi queryOneCaiDan(int id) {
+		return caidan_yi.queryOneCaiDan(id);
+	}
+	
+	//一级修改单个
+	public boolean updateCaiDan(CaiDan_Yi menu) {
+		return caidan_yi.updateCaiDan(menu);
+	}
+	
+	//一级添加单个
+	public boolean addCaiDan(CaiDan_Yi menu) {
+		return caidan_yi.addCaiDan(menu);
+	}
+	
+	//一级删除单个
+	public boolean deleteCaiDan(int id) {
+		return caidan_yi.deleteCaiDan(id);
+	}
+	
+	//二级查询单个
+	public SecondaryMenu queryOneMenu(int id) {
+		return secondaryService.qqueryOneMenuById(id);
+	}
+	
+	//二级修改单个
+	public boolean updateMenu(SecondaryMenu menu) {
+		
+		return secondaryService.updateMenu(menu);
+	}
+	
+	//二级添加单个
+	public boolean addMenu(SecondaryMenu menu) {
+		return secondaryService.addMenu(menu);
+	}
+	
+	//二级删除单个
+	public boolean deleteMenu(int id) {
+		return secondaryService.deleteMenu(id);
+	}
+
+}

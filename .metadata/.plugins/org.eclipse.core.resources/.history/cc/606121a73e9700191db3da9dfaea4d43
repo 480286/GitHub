@@ -1,0 +1,32 @@
+package com.mypack.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.mypack.entity.Goods;
+import com.mypack.service.GoodsServiceIF;
+
+@Controller
+@Transactional
+public class GoodsController {
+
+	@Autowired
+	GoodsServiceIF goodsService;
+	
+	@RequestMapping("/list")
+	public String list(Model model) {
+		
+		List<Goods> goodsLst=goodsService.queryAllGoods();
+		model.addAttribute("goodsModel", goodsLst);
+		return "index";
+	}
+	
+	public String loadGoods(int gId) {
+		
+	}
+}

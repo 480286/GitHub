@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+
+    <resultMap type="Classes" id="classesResultMap">
+         <id property="cid" column="c_id"/>
+         <result property="cname" column="c_name"/>
+         <association property="teacher">
+               <id property="tid" column="t_id"/>
+               <result property="tname" column="t_name"/>
+         </association>
+    </resultMap>
+    
+    <select id="queryOneClassesById" resultMap="classesResultMap" parameterType="int">
+         select c.c_id,c.c_name,t.t_id,t.t_name from class c,teacher t where c.teacher_id=t.t_id and t.t_id=#{tid}
+    </select>
+</mapper>

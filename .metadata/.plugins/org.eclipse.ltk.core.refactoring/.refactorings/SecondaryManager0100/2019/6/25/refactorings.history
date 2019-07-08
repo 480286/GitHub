@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;index.jsp&apos; to &apos;jsp&apos;&#x0D;&#x0A;- Original project: &apos;SecondaryManager0100&apos;&#x0D;&#x0A;- Destination element: &apos;jsp&apos;&#x0D;&#x0A;- Original element: &apos;index.jsp&apos;" description="Copy file" element1="src/main/webapp/index.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1560824228065" target="/b2c_maven_ssm0100/src/main/webapp/WEB-INF/jsp" units="0" version="1.0"/>
+</session>

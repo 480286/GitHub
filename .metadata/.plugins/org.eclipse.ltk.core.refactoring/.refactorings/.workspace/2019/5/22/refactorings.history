@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Mbatis与动态Sql&apos; to &apos;MbatisAndDynamicSql_0100&apos;" description="Rename resource &apos;Mbatis与动态Sql&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Mbatis与动态Sql" name="MbatisAndDynamicSql_0100" stamp="1559204364583" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;MbatisAndDynamicSql_0100&apos; to &apos;MybatisAndDynamicSql_0100&apos;" description="Rename resource &apos;MbatisAndDynamicSql_0100&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/MbatisAndDynamicSql_0100" name="MybatisAndDynamicSql_0100" stamp="1559204636540" updateReferences="true"/>
+</session>

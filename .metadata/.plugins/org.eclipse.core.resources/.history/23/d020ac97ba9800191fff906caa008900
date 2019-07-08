@@ -1,0 +1,9 @@
+package com.mypack.service;
+
+import com.mypack.entity.Cart;
+
+public interface CartServiceIF {
+
+	boolean insertGoods(Cart cart);
+
+}

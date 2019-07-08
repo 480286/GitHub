@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Mbatis与动态Sql"
+  id="myeclipse.1553480272051"
+  context-root="/Mbatis与动态Sql"
+  j2ee-spec="5.0"
+  archive="Mbatis与动态Sql.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

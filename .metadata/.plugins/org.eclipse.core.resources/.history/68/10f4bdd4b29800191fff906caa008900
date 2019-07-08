@@ -1,0 +1,21 @@
+package com.mypack.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.mypack.dao.CartDao;
+import com.mypack.entity.Cart;
+
+@Service
+@Transactional
+public class CartServiceImpl {
+
+	@Autowired
+	CartDao cartDao;
+	
+	public boolean insertGoods(Cart cart) {
+		return cartDao.insertGoods(cart);
+	}
+	
+}
