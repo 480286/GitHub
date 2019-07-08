@@ -21947,3 +21947,4 @@ org.eclipse.core.runtime.CoreException: Launch configuration Managers.Test1 refe
 2019-07-01 11:53:50,371 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-07-01 11:53:50,377 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-07-01 11:53:50,378 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Javawork\work\b2c_maven_ssm0100\src\test\resources
+2019-07-08 15:03:33,365 [Worker-2: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

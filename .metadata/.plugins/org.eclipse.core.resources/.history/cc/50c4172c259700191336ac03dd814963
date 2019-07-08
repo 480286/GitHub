@@ -1,9 +1,0 @@
-package com.mypack.service;
-
-import com.mypack.entity.Goods;
-
-public interface GoodsServiceIF {
-
-	Goods queryGoodsAll();
-
-}
